@@ -4,9 +4,10 @@ from django.utils import timezone
 from django.template.defaultfilters import slugify
 
 # Create your models here.
+char_length = 128
 
 class Category(models.Model): 
-	name = models.CharField(max_length=128, unique=True)
+	name = models.CharField(max_length=char_length, unique=True)
 	likes = models.IntegerField(default=0)
 	views = models.IntegerField(default=0)
 	slug = models.SlugField(blank=True)
